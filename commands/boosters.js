@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args, prefix, player, db) => {
     let stats = await db.collection("users").findOne({_id: message.author.id});
     if(!stats) return message.reply(`you haven't started the game yet. Please type \`${prefix}start\` to begin the game.`);
-    let exp = "You have no active EXP booster.";
-    let valtz = "You have no active Valtz booster.";
+    let exp = "You have no active EXP booster. Please get one from the shop! :)";
+    let valtz = "You have no active Valtz booster. Please get one from the shop! :)";
     let booster1 = client.expboost.get(message.author.id);
     let booster2 = client.valtzboost.get(message.author.id);
     let now = new Date();
